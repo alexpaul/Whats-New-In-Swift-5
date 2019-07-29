@@ -147,6 +147,16 @@ num.isMultiple(of: 3)
 // compactMapValues
 // =================================================================================
 
+// compactMap review
+let numStrings = ["1", "g", "4"]
+let nums = numStrings.compactMap { Int($0) }
+print(nums) // [1, 4]
+
+// mapValues review
+let dict = [1: 1, 2: 2, 3: 3]
+let dictMapValues = dict.mapValues { $0 * $0 }
+print(dictMapValues) // [3: 9, 2: 4, 1: 1]
+
 
 
 
