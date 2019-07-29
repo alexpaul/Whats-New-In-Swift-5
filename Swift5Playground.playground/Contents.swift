@@ -6,6 +6,7 @@ import Foundation
 
 // Raw Strings - new delimeter #
 // the # delimeter treats the entire String as its raw value and inclued any escape characters
+// =================================================================================
 
 var bestTrainingSite = #""The internet's best website for learning iOS, Android and Unity is http://raywenderlich.com" -- Joe User""#
 print(bestTrainingSite)
@@ -25,9 +26,23 @@ raywenderlich.com are
 print(longerTweet)
 
 
+// Character Properties
+// =================================================================================
+let sentence = "$a(i12😇"
+for char in sentence {
+  if char.isLetter {
+    print(char)
+  }
+}
+
+
+
+
+
 // String Interpolation
 // Difference between using CustomStringConvertible and StringInterpolation is that
 // you can pass more arguments at runtime when using string interpolation
+// =================================================================================
 
 struct Person: CustomStringConvertible {
   let name: String
@@ -56,6 +71,77 @@ extension String.StringInterpolation {
   }
 }
 print("\(alex, dateFormatterStyle: .short)")
+
+
+
+// Result Type
+// =================================================================================
+
+enum NetworkingError: Error {
+  case badURL
+  case noNetworkConnection
+  case error404
+}
+
+func getSomeDataOnline(urlSring: String, completion: @escaping (Result<Int, NetworkingError>) -> Void) {
+  guard let url = URL(string: urlSring) else {
+    completion(.failure(.badURL))
+    return
+  }
+  print("Getting data from \(url)")
+  completion(.success(200))
+}
+
+getSomeDataOnline(urlSring: "https://alexcpaul.com") { result in
+  switch result {
+  case .failure(let error):
+    print("error: \(error)")
+  case .success(let code):
+    print("success: \(code)")
+  }
+}
+
+getSomeDataOnline(urlSring: "https://pursuit.org") { result in
+  do {
+    let code = try result.get()
+    print("status code: \(code)")
+  } catch {
+    print("error thrown: \(error)")
+  }
+}
+
+
+// future enum cases @unknown
+// =================================================================================
+
+enum PursuitTechnologyStack {
+  case iOS
+  case android
+  case web
+  //case dataScience
+}
+let cohort = PursuitTechnologyStack.iOS
+switch cohort {
+case .iOS:
+  break
+case .android:
+  break
+@unknown default:
+  print("Welcome to full stack web")
+}
+
+
+// isMultiple(of: )
+// =================================================================================
+let num = 40
+num.isMultiple(of: 2)
+num.isMultiple(of: 10)
+num.isMultiple(of: 3)
+
+
+
+// compactMapValues
+// =================================================================================
 
 
 
