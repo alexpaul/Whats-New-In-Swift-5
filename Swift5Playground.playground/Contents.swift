@@ -144,7 +144,7 @@ num.isMultiple(of: 3)
 
 
 
-// compactMapValues
+// compactMapValues: remove nil values and perform transform on values of dictionary
 // =================================================================================
 
 // compactMap review
@@ -157,7 +157,13 @@ let dict = [1: 1, 2: 2, 3: 3]
 let dictMapValues = dict.mapValues { $0 * $0 }
 print(dictMapValues) // [3: 9, 2: 4, 1: 1]
 
-
+// using compactMapValues
+let cities = ["Stockholm": true,
+              "San Paolo": nil,
+              "Boston": true,
+              "Tokyo": nil]
+let placesVisited = cities.compactMapValues { $0 }
+print(placesVisited)
 
 
 
