@@ -26,3 +26,4 @@ let welcomeMessage = #""What's New in Swift 5.0, #swift #pursuit #ios""#
 print(welcomeMessage)
 // "What's New in Swift 5.0, #swift #pursuit #ios"
 ```
+## [Playground](https://github.com/alexpaul/Whats-New-In-Swift-5/blob/master/Swift5Playground.playground/Contents.swift)
