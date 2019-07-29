@@ -42,6 +42,7 @@ for char in sentence {
 // String Interpolation
 // Difference between using CustomStringConvertible and StringInterpolation is that
 // you can pass more arguments at runtime when using string interpolation
+// https://developer.apple.com/documentation/swift/stringinterpolationprotocol
 // =================================================================================
 
 struct Person: CustomStringConvertible {
@@ -112,13 +113,14 @@ getSomeDataOnline(urlSring: "https://pursuit.org") { result in
 
 
 // future enum cases @unknown
+// https://stackoverflow.com/questions/55433505/using-unknown-default-in-swift-5-enum-how-to-suppress-default-will-never-be
 // =================================================================================
 
 enum PursuitTechnologyStack {
   case iOS
   case android
   case web
-  //case dataScience
+  case dataScience
 }
 let cohort = PursuitTechnologyStack.iOS
 switch cohort {
@@ -126,8 +128,10 @@ case .iOS:
   break
 case .android:
   break
+case .web:
+  break
 @unknown default:
-  print("Welcome to full stack web")
+  print("Welcome to Data Science")
 }
 
 
@@ -142,9 +146,6 @@ num.isMultiple(of: 3)
 
 // compactMapValues
 // =================================================================================
-
-
-
 
 
 
