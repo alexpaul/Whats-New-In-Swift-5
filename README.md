@@ -12,13 +12,13 @@
 
 ## Topics
 
-* Raw Strings 
-* String Interpolation 
+* Raw Strings
 * Character Properties 
-* Result Type 
-* Future enum cases @unknown
+* String Interpolation 
 * compactMapValues() 
+* Future enum cases @unknown
 * isMultiple(of: ) 
+* Result Type 
 
 
 ```swift 
