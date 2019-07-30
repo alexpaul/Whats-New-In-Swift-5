@@ -6,6 +6,8 @@ import Foundation
 
 // Raw Strings - new delimeter #
 // the # delimeter treats the entire String as its raw value and inclued any escape characters
+// Apple Docs: "You can place a string literal within extended delimiters to include special characters in
+// a string without invoking their effect."
 // =================================================================================
 
 var bestTrainingSite = #""The internet's best website for learning iOS, Android and Unity is http://raywenderlich.com" -- Joe User""#
