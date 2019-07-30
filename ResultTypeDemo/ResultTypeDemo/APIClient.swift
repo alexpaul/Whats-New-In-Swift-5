@@ -15,11 +15,13 @@ enum NetworkError: Error {
 }
 
 class APIClient {
-  public func getData(keyword: String, completion: @escaping (Result<[String], NetworkError>) -> Void) {
+  public func getData(keyword: String,
+                      zipcode: String,
+                      completion: @escaping (Result<[String], NetworkError>) -> Void) {
     guard let addingEncoded = keyword.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
       return
     }
-    guard let url = URL(string: "https://api.yelp.com/v3/businesses/search?term=\(addingEncoded)&location=11375") else {
+    guard let url = URL(string: "https://api.yelp.com/v3/businesses/search?term=\(addingEncoded)&location=\(zipcode)") else {
       completion(.failure(.badURL))
       return
     }

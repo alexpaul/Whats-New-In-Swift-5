@@ -18,7 +18,7 @@ class ViewController: UIViewController {
   }
   
   private func fetchData() {
-    apiClient.getData(keyword: "dimsum") { result in
+    apiClient.getData(keyword: "dim sum", zipcode: "11375") { result in
       switch result {
       case .failure(let error):
         print("error: \(error))")
