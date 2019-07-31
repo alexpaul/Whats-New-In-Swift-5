@@ -19,7 +19,7 @@ class APIClient {
                       zipcode: String,
                       completion: @escaping (Result<[String], NetworkError>) -> Void) {
     guard let addingEncoded = keyword.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
-      return
+      return  
     }
     guard let url = URL(string: "https://api.yelp.com/v3/businesses/search?term=\(addingEncoded)&location=\(zipcode)") else {
       completion(.failure(.badURL))
