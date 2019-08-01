@@ -10,7 +10,7 @@
 * Swift 5.0 was shipped with Xcode 10.2
 * Swift 5.1 will be shipped along with Xcode 11
 
-## Topics
+## Swift 5.0
 
 * Raw Strings
 * Character Properties 
@@ -19,6 +19,10 @@
 * Future enum cases @unknown
 * isMultiple(of: ) 
 * Result Type 
+
+## Swift 5.1
+
+* Implicit return
 
 
 ```swift 
