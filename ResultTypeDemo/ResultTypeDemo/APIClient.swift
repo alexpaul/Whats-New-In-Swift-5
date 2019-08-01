@@ -18,8 +18,9 @@ enum NetworkError: Error {
 class APIClient {
   // Result type in Swift 5 in a generic enum used on asychrousnous calls,
   // the Result is an enum that validates a .success or .failure against the call
-  public func searchBusinesses(completion: @escaping (Result<[Business], NetworkError>) -> Void) {
-    let endPointURL = "https://api.yelp.com/v3/businesses/search?term=coffee&location=10023"
+  public func searchBusinesses(term: String, completion: @escaping (Result<[Business], NetworkError>) -> Void) {
+    let encodedTerm = term.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
+    let endPointURL = "https://api.yelp.com/v3/businesses/search?term=\(encodedTerm)&location=10023"
     guard let url = URL(string: endPointURL) else {
       return
     }

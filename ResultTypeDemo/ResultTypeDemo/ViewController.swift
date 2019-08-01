@@ -26,11 +26,11 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     searchBar.delegate = self
     tableView.dataSource = self
-    searchBusinesses()
+    searchBusinesses(term: "coffee")
   }
   
-  private func searchBusinesses() {
-    apiClient.searchBusinesses { result in
+  private func searchBusinesses(term: String) {
+    apiClient.searchBusinesses(term: term) { result in
       switch result {
       case .failure(let error):
         print("error: \(error)")
@@ -56,7 +56,7 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UISearchBarDelegate {
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
     searchBar.resignFirstResponder()
-    print(searchBar.text ?? "")
+    searchBusinesses(term: searchBar.text ?? "")
     searchBar.text = ""
   }
 }
