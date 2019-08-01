@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
   
+  @IBOutlet weak var searchBar: UISearchBar!
   @IBOutlet weak var tableView: UITableView!
   
   private let apiClient = APIClient()
@@ -23,6 +24,7 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    searchBar.delegate = self
     tableView.dataSource = self
     searchBusinesses()
   }
@@ -48,6 +50,14 @@ extension ViewController: UITableViewDataSource {
     let business = businesses[indexPath.row]
     cell.textLabel?.text = business.name
     return cell
+  }
+}
+
+extension ViewController: UISearchBarDelegate {
+  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    searchBar.resignFirstResponder()
+    print(searchBar.text ?? "")
+    searchBar.text = ""
   }
 }
 

@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yFN-Np-6PF">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BusinessCell" id="kPc-kO-FTN">
@@ -32,23 +32,34 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="W5z-nC-R0z">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="mrj-tg-RSL"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="yFN-Np-6PF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7Fc-NT-REW"/>
-                            <constraint firstItem="yFN-Np-6PF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Eth-iz-vjY"/>
-                            <constraint firstItem="yFN-Np-6PF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QYZ-6X-DsO"/>
-                            <constraint firstAttribute="bottom" secondItem="yFN-Np-6PF" secondAttribute="bottom" id="jj4-T5-0zI"/>
+                            <constraint firstItem="yFN-Np-6PF" firstAttribute="top" secondItem="W5z-nC-R0z" secondAttribute="bottom" id="4d4-ia-dqk"/>
+                            <constraint firstItem="yFN-Np-6PF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Dtc-Ek-RdK"/>
+                            <constraint firstItem="yFN-Np-6PF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="G3E-Dd-nga"/>
+                            <constraint firstItem="W5z-nC-R0z" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Wdu-Am-Qa7"/>
+                            <constraint firstAttribute="bottom" secondItem="yFN-Np-6PF" secondAttribute="bottom" id="Wrp-13-S5T"/>
+                            <constraint firstItem="W5z-nC-R0z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dBX-4r-x1t"/>
+                            <constraint firstItem="W5z-nC-R0z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="phr-jE-vXi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="W5z-nC-R0z" id="Rxv-iK-s5I"/>
                         <outlet property="tableView" destination="yFN-Np-6PF" id="OOO-FT-f1q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26" y="123"/>
+            <point key="canvasLocation" x="-26.086956521739133" y="122.54464285714285"/>
         </scene>
     </scenes>
 </document>
