@@ -9,21 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController {
+  private let apiClient = APIClient()
   
-  private var apiClient = APIClient()
-
   override func viewDidLoad() {
     super.viewDidLoad()
-    fetchData()
+    searchBusinesses()
   }
   
-  private func fetchData() {
-    apiClient.getData(keyword: "dim sum", zipcode: "11375") { result in
+  private func searchBusinesses() {
+    apiClient.searchBusinesses { result in
       switch result {
       case .failure(let error):
-        print("error: \(error))")
+        print("error: \(error)")
       case .success(let businesses):
-        print("Yelp Businesses: \(businesses)")
+        let names = businesses.map { $0.name }
+        print("businesses found: \(names)")
       }
     }
   }

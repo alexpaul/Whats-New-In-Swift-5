@@ -14,6 +14,7 @@
 		571B460422EFE52900E7691D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 571B460222EFE52900E7691D /* LaunchScreen.storyboard */; };
 		571B460C22EFE54100E7691D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571B460B22EFE54100E7691D /* APIClient.swift */; };
 		571B460E22F0D3D700E7691D /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571B460D22F0D3D700E7691D /* Business.swift */; };
+		57C5A79222F2F27100EAC7A3 /* SecretKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C5A79122F2F27100EAC7A3 /* SecretKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		571B460522EFE52900E7691D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		571B460B22EFE54100E7691D /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		571B460D22F0D3D700E7691D /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		57C5A79122F2F27100EAC7A3 /* SecretKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				571B45F922EFE52600E7691D /* AppDelegate.swift */,
 				571B45FB22EFE52600E7691D /* ViewController.swift */,
 				571B460B22EFE54100E7691D /* APIClient.swift */,
+				57C5A79122F2F27100EAC7A3 /* SecretKeys.swift */,
 				571B460D22F0D3D700E7691D /* Business.swift */,
 				571B45FD22EFE52600E7691D /* Main.storyboard */,
 				571B460022EFE52900E7691D /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 				571B460E22F0D3D700E7691D /* Business.swift in Sources */,
 				571B45FA22EFE52600E7691D /* AppDelegate.swift in Sources */,
 				571B460C22EFE54100E7691D /* APIClient.swift in Sources */,
+				57C5A79222F2F27100EAC7A3 /* SecretKeys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +297,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZEKMNK5YD3;
 				INFOPLIST_FILE = ResultTypeDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,6 +316,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZEKMNK5YD3;
 				INFOPLIST_FILE = ResultTypeDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
