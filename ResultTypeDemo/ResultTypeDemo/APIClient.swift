@@ -24,7 +24,7 @@ class APIClient {
       return
     }
     var request = URLRequest(url: url)
-    let accessToken = ""
+    let accessToken = SecretKeys.YelpAPIKey
     request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
     let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
       guard let httpResponse = response as? HTTPURLResponse,
