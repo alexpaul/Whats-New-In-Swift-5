@@ -9,10 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController {
+  
+  @IBOutlet weak var tableView: UITableView!
+  
   private let apiClient = APIClient()
+  private var businesses = [Business]() {
+    didSet {
+      DispatchQueue.main.async {
+        self.tableView.reloadData()
+      }
+    }
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    tableView.dataSource = self
     searchBusinesses()
   }
   
@@ -22,10 +33,21 @@ class ViewController: UIViewController {
       case .failure(let error):
         print("error: \(error)")
       case .success(let businesses):
-        let names = businesses.map { $0.name }
-        print("businesses found: \(names)")
+        self.businesses = businesses
       }
     }
+  }
+}
+
+extension ViewController: UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return businesses.count
+  }
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "BusinessCell", for: indexPath)
+    let business = businesses[indexPath.row]
+    cell.textLabel?.text = business.name
+    return cell
   }
 }
 
